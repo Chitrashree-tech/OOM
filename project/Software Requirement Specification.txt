@@ -1,0 +1,129 @@
+Software Requirement Specification (SRS)
+Cloud-Based File Storage & Sharing System
+1. Introduction:
+1.1 Purpose
+The purpose of this document is to define the software requirements for the Cloud-Based File Storage & Sharing System. This SRS outlines the functional and non-functional specifications of the system, providing a clear understanding of its goals, architecture, and design constraints. The document serves as a guideline for developers, project managers, testers, and stakeholders involved in the project.
+
+
+1.2 Document Conventions
+This document follows the IEEE Standard for Software Requirements Specifications (IEEE 830). The terms “shall” indicate mandatory requirements, while “should” indicates optional or recommended features. All diagrams are represented using Mermaid UML syntax for clarity and portability.
+
+
+1.3 Intended Audience and Reading Suggestions
+This SRS is intended for:
+Developers – To understand detailed functional requirements and design constraints.
+Project Managers – To plan, schedule, and track the project development.
+Testers – To design and perform validation and verification procedures.
+Clients/End Users – To understand the capabilities and limitations of the system. It is suggested that readers review Sections 1 and 2 for an overview, followed by Section 3 for detailed system functionality.
+
+
+1.4 Product Scope
+The Cloud-Based File Storage & Sharing System is designed to allow users to securely store, access, and share files via a web-based and mobile platform. It enables functionalities such as file upload/download, sharing via links or user permissions, version control, and real-time synchronization. The system aims to enhance collaboration and data availability while maintaining data security and integrity.
+
+
+1.5 References
+IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications.
+OWASP Security Guidelines for Web Applications.
+Amazon Web Services (AWS) Cloud Storage Documentation.
+Google Cloud Storage API Reference.
+
+
+2. Overall Description:
+2.1 Product Perspective
+The Cloud-Based File Storage & Sharing System operates as a distributed, client-server architecture hosted on a cloud infrastructure (e.g., AWS, Azure, or GCP). The system will include both a web interface and mobile application, communicating with backend APIs for authentication, data management, and file storage.
+
+
+2.2 Product Features
+User Authentication and Authorization: Secure login, registration, and role-based access control.
+File Management: Upload, download, rename, delete, and organize files and folders.
+Sharing and Collaboration: Share files with specific users or generate public/private shareable links.
+Version Control: Maintain file history and revert to previous versions.
+Search and Filtering: Locate files quickly using search keywords, filters, or tags.
+Storage Analytics: Display usage statistics and storage capacity reports.
+Backup and Recovery: Automated cloud backups with recovery options.
+
+
+2.3 User Classes and Characteristics
+End User – Uploads, downloads, and shares files using a simple, user-friendly interface.
+Administrator – Manages users, permissions, and overall storage operations.
+System Developer – Develops and maintains the system’s backend and frontend components.
+Tester – Validates system functionality and ensures quality through testing.
+
+
+2.4 Operating Environment
+Server: Cloud-hosted environment (AWS EC2, Azure VM, or GCP Compute Engine)
+Client: Web browsers (Chrome, Firefox, Edge, Safari), Android/iOS apps
+Database: MySQL or PostgreSQL for metadata; Cloud object storage for files
+Operating Systems: Windows, Linux, macOS
+
+
+2.5 Design and Implementation Constraints
+Must comply with cloud provider APIs (e.g., AWS S3 or Google Cloud Storage).
+Implementation languages: Java/Spring Boot for backend, React/Flutter for frontend.
+Follow REST API standards for interoperability.
+Use encryption standards (AES-256 for data, TLS 1.3 for communication).
+
+
+2.6 User Documentation
+Online help section integrated into the app.
+User manual with setup and troubleshooting guides
+Administrator guide for managing user accounts and permissions.
+
+
+2.7 Assumptions and Dependencies
+Users must have stable internet connectivity.
+The system depends on third-party cloud service uptime (e.g., AWS or Google Cloud).
+Browser and device compatibility as per supported versions.
+
+
+3. System Features
+3.1 Functional Requirements
+User Registration & Login – Allows users to register and securely authenticate using email, password, and token-based authentication (JWT/OAuth 2.0).
+File Upload and Storage – Enables users to upload files to cloud storage while saving related metadata like name, size, and owner.
+File Sharing – Allows users to share files through permissions or shareable links, with options to revoke access anytime.
+File Download and Access Control – Permits only authorized users to download files, maintaining detailed audit logs of al download events.
+Version Control and History – Maintains file version history and allows users to restore previous versions when needed.
+Search and Organization – Supports file search by name, type, or tags and provides folder-based hierarchical organization.
+
+
+3.2 Non-Functional Requirements
+Security: Data encryption at rest and in transit.
+Scalability: Support at least 10,000 concurrent users.
+Performance: Response time under 2 seconds for all major operations.
+Availability: 99.9% uptime SLA.
+Reliability: Automatic recovery from failures within 5 minutes.
+Usability: User-friendly UI with consistent design across devices.
+Maintainability: Modular code structure with proper documentation.
+Portability: Compatible with major browsers and OS.
+
+
+3.3 Domain Requirements
+Compliance with data protection laws (e.g., GDPR, HIPAA).
+Support for role-based access control (Admin, User, Viewer).
+All files stored with unique identifiers for deduplication.
+
+
+3.4 External Interface Requirements
+User Interface: Responsive web dashboard and mobile app.
+Hardware Interface: Standard input devices and mobile touchscreens.
+Software Interface: Integration with Google Drive, Dropbox APIs.
+Communication Interface: REST API over HTTPS.
+
+
+4. Appendix
+4.1 Acronyms and Abbreviations
+Acronym	Definition
+API	Application Programming Interface
+AWS	Amazon Web Services
+GDPR	General Data Protection Regulation
+JWT	JSON Web Token
+UI	User Interface
+REST	Representational State Transfer
+
+
+4.2 Glossary
+Cloud Storage: A model of data storage where digital data is stored on remote servers.
+Access Control: Restriction of access to system resources to authorized users.
+Encryption: The process of converting information into code to prevent unauthorized access.
+Backup: A copy of data stored separately for recovery in case of loss.
+Scalability: The capability of a system to handle a growing amount of work by adding resources.
